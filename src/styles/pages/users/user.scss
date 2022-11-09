@@ -1,0 +1,236 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+@import "../../utils/varialbles/border";
+
+.user_nav {
+  @include flex($content: space-between);
+  width: 1200px;
+  height: 100px;
+  margin: 10px auto 0;
+  .user_info {
+    @include flex($content: space-between);
+    h1 {
+      font-size: 32px;
+      margin-left: 10px;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+  }
+}
+.search_section {
+  margin: 20px auto;
+  width: 1200px;
+  .input_div {
+    width: 100%;
+  }
+}
+
+.users_section {
+  // border: 1px solid black;
+  width: 1200px;
+  margin: 50px auto;
+  cursor: pointer;
+  overflow-y: auto;
+  .user {
+    display: flex;
+    align-items: center;
+    // padding: 15px 10px;
+    padding-bottom: 14px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(183, 183, 183, 0.281);
+    transition-duration: 0.7s;
+    position: relative;
+    // border: 1px solid red;
+    div {
+      position: absolute;
+      z-index: 2;
+      top: 12px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50px;
+    }
+    .active {
+      left: -12px;
+      background-color: rgb(43, 246, 43);
+    }
+    .deactive {
+      left: -12px;
+      background-color: tomato;
+    }
+    p {
+      margin-left: 10px;
+      width: 100%;
+      text-transform: capitalize;
+      font-size: 20px;
+      color: $font;
+      font-weight: 600;
+    }
+    img {
+      width: 58px;
+      height: 56px;
+    }
+  }
+  // .user:hover {
+  //   transform: scale(0.9);
+  // }
+}
+
+@media screen and (max-width: 1250px) {
+  .user_nav {
+    width: 1050px;
+  }
+  .search {
+    width: 1050px;
+  }
+  .active_user_section {
+    width: 1050px;
+  }
+  .users_section {
+    width: 1050px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .user_nav {
+    width: 750px;
+  }
+  .search {
+    width: 750px;
+  }
+  .active_user_section {
+    width: 750px;
+  }
+  .users_section {
+    width: 750px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .user_nav {
+    width: 90%;
+    height: 80px;
+    margin: 10px auto 0;
+    .user_info {
+      @include flex($content: space-between);
+      h1 {
+        font-size: 20px;
+      }
+      img {
+        width: 45px;
+        height: 43px;
+      }
+    }
+    button {
+      @include button($pad: 10px 20px, $size: 12px);
+    }
+  }
+  .search {
+    width: 90%;
+    margin: 10px auto 0;
+    position: relative;
+    span {
+      padding: 5px 8px;
+      border-radius: 4px;
+      top: 6px;
+      left: 6.5px;
+      i {
+        font-size: 14px;
+        color: $body;
+        font-weight: 600;
+      }
+    }
+    input {
+      padding: 10px 45px;
+      font-size: 14px;
+      border: 2px solid #4e87ff;
+    }
+    input::placeholder {
+      color: $font;
+    }
+  }
+  .active_user_section {
+    width: 90%;
+    height: 100px;
+    margin: 10px auto 40px;
+    display: flex;
+    align-items: center;
+    // border: 1px solid black;
+    overflow-x: auto;
+
+    .active_heading {
+      border-right: 2px solid rgba(0, 0, 0, 0.342);
+      margin-right: 15px;
+      h2 {
+        line-height: 26px;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 15px;
+        color: $font;
+      }
+    }
+
+    .activve_users {
+      display: flex;
+      align-items: center;
+      .user_div {
+        // border: 1px solid black;
+        width: 50px;
+        height: 70px;
+        margin: 0 12px;
+        img {
+          width: 48px;
+          height: 46px;
+          margin-bottom: 3px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .users_section {
+    // border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+    .user {
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      div {
+        position: absolute;
+        z-index: 2;
+        top: 12px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50px;
+      }
+      .active {
+        left: -12px;
+        background-color: rgb(43, 246, 43);
+      }
+      .deactive {
+        left: -12px;
+        background-color: tomato;
+      }
+
+      p {
+        margin-left: 10px;
+        width: 100%;
+        text-transform: capitalize;
+        font-size: 20px;
+        color: $font;
+        font-weight: 600;
+      }
+      img {
+        width: 50px;
+        height: 48px;
+        border-radius: 3px;
+        object-fit: cover;
+      }
+    }
+    // .user:hover {
+    //   transform: scale(0.9);
+    // }
+  }
+}

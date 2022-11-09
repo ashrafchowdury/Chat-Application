@@ -1,0 +1,23 @@
+@mixin button(
+  $pad: 14px 35px,
+  $mar: 0px,
+  $back: linear-gradient(270deg, #5342de 0%, #4d88ff 100%),
+  $radius: 4px,
+  $color: white,
+  $weight: bold,
+  $size: 16px,
+  $border: none
+) {
+  padding: $pad;
+  background: $back;
+  border-radius: $radius;
+  color: $color;
+  border-radius: $radius;
+  cursor: pointer;
+  font-weight: $weight;
+  font-size: $size;
+  margin: $mar;
+  transition-duration: 0.7s;
+  border: $border;
+  text-transform: uppercase;
+}

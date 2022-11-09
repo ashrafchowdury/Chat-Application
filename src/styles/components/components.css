@@ -1,0 +1,7 @@
+.avatar {
+  width: 65px;
+  height: 63px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+}/*# sourceMappingURL=components.css.map */

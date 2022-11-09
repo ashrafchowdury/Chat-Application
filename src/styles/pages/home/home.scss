@@ -1,0 +1,75 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+
+nav {
+  @include flex($content: center);
+  height: 110px;
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 15px;
+      width: 38px;
+    }
+    h1 {
+      font-size: 38px;
+      margin-bottom: 5px;
+      font-family: "Pacifico", cursive;
+    }
+  }
+}
+header {
+  height: 75vh;
+  @include flex($content: center, $items: center, $direc: column);
+  text-align: center;
+  h1 {
+    font-size: 88px;
+    font-weight: bold;
+    line-height: 110px;
+    span {
+      background: linear-gradient(266.78deg, #5344df 8.99%, #4e86fe 59.83%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+  }
+  p {
+    margin: 15px 0 50px;
+    font-size: 18px;
+    line-height: 32px;
+    width: 800px;
+  }
+  .input_div{
+    width: 750px;
+  }
+}
+footer {
+  text-align: center;
+  p {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    margin: 0 4px 0 6px;
+  }
+  img {
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+}
+
+@media screen and (max-width: 750px) {
+}
+
+@media screen and (max-width: 550px) {
+}

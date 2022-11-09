@@ -1,0 +1,90 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f3f4fd;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+button {
+  font-size: 16px;
+  color: #464D51;
+}
+
+h1 {
+  font-size: 58px;
+  color: #464D51;
+}
+
+.button {
+  padding: 12px 40px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+  color: white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+.input_div {
+  display: flex;
+  position: relative;
+}
+.input_div span {
+  background-color: #5344df;
+  padding: 10px 15px;
+  border-radius: 50px;
+  color: white;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+.input_div span i {
+  font-size: 18px;
+}
+.input_div input {
+  font-size: 18px;
+  padding: 13px 60px;
+  border-radius: 50px;
+  width: 100%;
+  border: 3px solid #5344df;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1050px) {
+  p,
+button {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 550px) {
+  p,
+button {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}/*# sourceMappingURL=globals.css.map */
