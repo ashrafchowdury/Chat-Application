@@ -41,16 +41,16 @@ body {
 .user_chats {
   width: 1100px;
   margin: 0 auto;
-  height: auto;
+  height: 100%;
   word-break: break-all;
-  padding: 100px 20px 60px;
-
+  padding: 150px 20px 80px;
   .left_user {
-    margin: 0 0 35px;
+    margin: 0 0 25px;
     float: left;
     clear: both;
     padding-right: 60px;
     @include flex($direc: column, $items: flex-start);
+    cursor: pointer;
     p {
       color: $body;
       font-weight: 500;
@@ -65,7 +65,7 @@ body {
     }
     .user_send_image {
       position: relative;
-      width: 400px;
+      width: 500px;
       img {
         width: 100%;
         object-fit: cover;
@@ -73,20 +73,24 @@ body {
       }
     }
   }
-
+  .left_user:last-child {
+    margin: 0 0 100px;
+  }
   .right_user {
-    // float: right;
-    // clear: both;
-    margin: 0 0 35px;
+    float: right;
+    clear: both;
+    margin: 0 0 25px;
     padding-left: 60px;
     @include flex($direc: column, $items: flex-end);
 
     .user_send_image {
       position: relative;
+      width: 500px;
       img {
-        width: 400px;
+        width: 100%;
         object-fit: cover;
         border-radius: $reduce-md;
+        cursor: pointer;
       }
     }
     p {
@@ -97,12 +101,14 @@ body {
       background-color: #5342de;
       border-radius: 50px 50px 0px 50px;
       cursor: pointer;
-      position: relative;
     }
     .msg_time {
       font-size: 10px;
       margin-top: 6px;
     }
+  }
+  .right_user:last-child {
+    margin: 0 0 100px;
   }
 }
 
@@ -120,14 +126,15 @@ body {
   .message {
     width: 100%;
     position: relative;
-    // border: 2px solid red;
+
     .input_file {
       position: absolute;
       top: 16px;
       right: 28px;
-      width: 32px;
+      width: 34px;
       height: 32px;
       overflow: hidden;
+      // border: 2px solid red;
       i {
         font-size: 1.6rem;
         color: #4e86fe;
@@ -135,6 +142,7 @@ body {
       input {
         opacity: 0;
         position: absolute;
+        z-index: 2;
       }
     }
     .input_div {

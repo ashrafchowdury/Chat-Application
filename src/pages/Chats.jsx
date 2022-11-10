@@ -9,15 +9,7 @@ import {
   orderBy,
   serverTimestamp,
   addDoc,
-  deleteDoc,
 } from "firebase/firestore";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
 import { Message } from "../components/Message";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
@@ -25,12 +17,12 @@ import { Avatar } from "../components/Avatar";
 import { useAuth } from "../utils/hooks/useAuth";
 import { useUsers } from "../utils/hooks/useUsers";
 import { db } from "../firebase/firebase";
+import { imageUpload } from "../utils/functions/imageUpload";
 
 const Chats = () => {
   const [message, setmessage] = useState([]);
   const [input, setinput] = useState("");
   const [image, setimage] = useState("");
-  const [progress, setprogress] = useState("");
   const { currentUser } = useAuth();
   const { email, displayName } = currentUser;
   const { user } = useUsers();
@@ -43,7 +35,7 @@ const Chats = () => {
   //filter my data
   const myData = user.filter((val) => val.id == email).map((val) => val);
   const myId = myData[0];
-  console.log(userId);
+
   //automatic scroll down function
   const scroll = () => {
     setTimeout(() => {
@@ -51,7 +43,7 @@ const Chats = () => {
         top: 99999999999999999,
         behavior: "smooth",
       });
-    }, 500);
+    }, 800);
   };
 
   //when the currentUser first time enter the chat user then create a document
@@ -103,27 +95,8 @@ const Chats = () => {
       scroll();
     }
   };
-  //upload the image on firebase storage & get the image URL
-  const uploadImage = (file) => {
-    const storage = getStorage();
 
-    const storageRef = ref(storage, `${displayName}/ ${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        setprogress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-      },
-      (error) => {
-        toast.error("Someting want wrong");
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setimage(downloadURL);
-        });
-      }
-    );
-  };
+
   return (
     <>
       <nav className="chat_nav">
@@ -148,7 +121,9 @@ const Chats = () => {
           <div className="input_file">
             <input
               type="file"
-              onChange={(e) => uploadImage(e.target.files[0])}
+              onChange={(e) =>
+                imageUpload(e.target.files[0], 'users', setimage)
+              }
             />
             <i className="fas fa-images"></i>
           </div>

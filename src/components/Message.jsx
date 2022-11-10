@@ -26,22 +26,6 @@ export const Message = ({ val, userId, myId }) => {
     // const delete_doc = await deleteDoc(
     //   doc(db, "message", `${myId?.uid + userId?.uid}`, "data", id)
     // );
-
-    //get storeage
-    const storage = getStorage();
-    // Create a reference to the file to delete
-    const desertRef = ref(storage, `ashraf chy/ashraf1.png`);
-
-    // Delete the file
-    deleteObject(desertRef)
-      .then(() => {
-        console.log("Image Deleted Successfully");
-        toast.success("Image Deleted Successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Someting Want Wrong");
-      });
   };
 
   const handleCopyText = (text) => {
@@ -58,7 +42,14 @@ export const Message = ({ val, userId, myId }) => {
         {val.img ? (
           <>
             <div className="user_send_image">
-              <img src={val?.img} alt="logo" onDoubleClick={handleImageTrash} />
+              <img
+                src={val?.img}
+                alt="logo"
+                onDoubleClick={() =>
+                  val?.uid == currentUser?.uid &&
+                  handleImageTrash(val?.id, val?.img)
+                }
+              />
             </div>
             <span className="msg_time">
               {val?.time?.split(" GMT-1200 (GMT-12:00)")[0]}
@@ -68,7 +59,9 @@ export const Message = ({ val, userId, myId }) => {
           <>
             <p
               onClick={() => handleCopyText(val?.msg)}
-              onDoubleClick={() => handleMsgDelete(val?.id)}
+              onDoubleClick={() =>
+                val?.uid == currentUser?.uid && handleMsgDelete(val?.id)
+              }
             >
               {val?.msg}
             </p>
