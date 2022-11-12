@@ -20,14 +20,19 @@ export const Message = ({ val, userId, myId }) => {
     toast.success("Message Deleted");
   };
 
-  //
+  //Working on the image deleting feature
   const handleImageTrash = async (id, imageUrl) => {
     //delete from document
     // const delete_doc = await deleteDoc(
     //   doc(db, "message", `${myId?.uid + userId?.uid}`, "data", id)
     // );
   };
-
+  const handleDownload = (imageUrl) => {
+    const a = document.createElement("a");
+    a.href = imageUrl;
+    a.target = "_blank";
+    a.click();
+  };
   const handleCopyText = (text) => {
     navigator.clipboard.writeText(text);
     toast.success("Message Copied");
@@ -45,10 +50,7 @@ export const Message = ({ val, userId, myId }) => {
               <img
                 src={val?.img}
                 alt="logo"
-                onDoubleClick={() =>
-                  val?.uid == currentUser?.uid &&
-                  handleImageTrash(val?.id, val?.img)
-                }
+                onDoubleClick={() => handleDownload(val?.img)}
               />
             </div>
             <span className="msg_time">
