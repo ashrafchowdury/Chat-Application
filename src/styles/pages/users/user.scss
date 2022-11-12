@@ -81,8 +81,12 @@
   .user_nav {
     width: 1050px;
   }
-  .search {
+  .search_section {
+    margin: 20px auto;
     width: 1050px;
+    .input_div {
+      width: 100%;
+    }
   }
   .active_user_section {
     width: 1050px;
@@ -96,8 +100,12 @@
   .user_nav {
     width: 750px;
   }
-  .search {
+  .search_section {
+    margin: 20px auto;
     width: 750px;
+    .input_div {
+      width: 100%;
+    }
   }
   .active_user_section {
     width: 750px;
@@ -115,94 +123,42 @@
     .user_info {
       @include flex($content: space-between);
       h1 {
-        font-size: 20px;
+        font-size: 24px;
       }
       img {
         width: 45px;
         height: 43px;
       }
     }
-    button {
-      @include button($pad: 10px 20px, $size: 12px);
-    }
   }
-  .search {
+  .search_section {
+    margin: 20px auto;
     width: 90%;
-    margin: 10px auto 0;
-    position: relative;
-    span {
-      padding: 5px 8px;
-      border-radius: 4px;
-      top: 6px;
-      left: 6.5px;
-      i {
-        font-size: 14px;
-        color: $body;
-        font-weight: 600;
-      }
-    }
-    input {
-      padding: 10px 45px;
-      font-size: 14px;
-      border: 2px solid #4e87ff;
-    }
-    input::placeholder {
-      color: $font;
+    .input_div {
+      width: 100%;
     }
   }
-  .active_user_section {
-    width: 90%;
-    height: 100px;
-    margin: 10px auto 40px;
-    display: flex;
-    align-items: center;
-    // border: 1px solid black;
-    overflow-x: auto;
 
-    .active_heading {
-      border-right: 2px solid rgba(0, 0, 0, 0.342);
-      margin-right: 15px;
-      h2 {
-        line-height: 26px;
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 15px;
-        color: $font;
-      }
-    }
-
-    .activve_users {
-      display: flex;
-      align-items: center;
-      .user_div {
-        // border: 1px solid black;
-        width: 50px;
-        height: 70px;
-        margin: 0 12px;
-        img {
-          width: 48px;
-          height: 46px;
-          margin-bottom: 3px;
-        }
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-  }
   .users_section {
     // border: 1px solid black;
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
     .user {
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      // padding: 15px 10px;
+      padding-bottom: 8px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(183, 183, 183, 0.281);
+      transition-duration: 0.7s;
+      position: relative;
+      // border: 1px solid red;
       div {
         position: absolute;
         z-index: 2;
         top: 12px;
-        width: 8px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
         border-radius: 50px;
       }
       .active {
@@ -213,20 +169,17 @@
         left: -12px;
         background-color: tomato;
       }
-
       p {
         margin-left: 10px;
         width: 100%;
         text-transform: capitalize;
-        font-size: 20px;
+        font-size: 16px;
         color: $font;
         font-weight: 600;
       }
       img {
-        width: 50px;
-        height: 48px;
-        border-radius: 3px;
-        object-fit: cover;
+        width: 45px;
+        height: 43px;
       }
     }
     // .user:hover {
