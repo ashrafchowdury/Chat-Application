@@ -124,11 +124,11 @@
     flex-direction: row;
   }
   .user_nav .user_info h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
   .user_nav .user_info img {
-    width: 45px;
-    height: 43px;
+    width: 42px;
+    height: 40px;
   }
   .search_section {
     margin: 20px auto;

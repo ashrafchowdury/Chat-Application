@@ -123,11 +123,11 @@
     .user_info {
       @include flex($content: space-between);
       h1 {
-        font-size: 24px;
+        font-size: 20px;
       }
       img {
-        width: 45px;
-        height: 43px;
+        width: 42px;
+        height: 40px;
       }
     }
   }
