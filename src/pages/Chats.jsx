@@ -56,6 +56,7 @@ const Chats = () => {
     };
     create_doc();
   }, []);
+
   ///get the message data
   useEffect(() => {
     const get_msg = () => {
@@ -66,12 +67,12 @@ const Chats = () => {
       const userData = onSnapshot(q, (snapshot) => {
         setmessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       });
+      //
+      scroll();
     };
     get_msg();
-    //
-    scroll();
   }, []);
-
+  scroll();
   //submit data
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,7 +96,6 @@ const Chats = () => {
       scroll();
     }
   };
-
 
   return (
     <>
@@ -122,7 +122,7 @@ const Chats = () => {
             <input
               type="file"
               onChange={(e) =>
-                imageUpload(e.target.files[0], 'users', setimage)
+                imageUpload(e.target.files[0], "users", setimage)
               }
             />
             <i className="fas fa-images"></i>
