@@ -7,10 +7,30 @@ import { useUsers } from "../utils/hooks/useUsers";
 import { Avatar } from "../components/Avatar";
 import { User } from "../components/User";
 const Users = () => {
+  const { user } = useUsers();
+  const [sortData, setsortData] = useState([]);
   const [search, setsearch] = useState("");
   const { currentUser, name } = useAuth();
-  const { user } = useUsers();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const ordarize_the_users = () => {
+      user.map((value) => {
+        if (value.token) {
+          return sortData.unshift(value);
+        }
+        if (!value.token) {
+          return sortData.push(value);
+        }
+      });
+      let uniqueChars = sortData.filter((element, index) => {
+        return sortData.indexOf(element) == index;
+      });
+      setsortData(uniqueChars);
+    };
+
+    ordarize_the_users();
+  }, [user]);
 
   return (
     <>
@@ -39,7 +59,7 @@ const Users = () => {
       </section>
 
       <main className="users_section">
-        {user
+        {sortData
           .filter((value) => {
             return value?.id != currentUser?.email;
           })

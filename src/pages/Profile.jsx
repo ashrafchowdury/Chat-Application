@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/pages/profile/profile.css";
 import { Avatar } from "../components/Avatar";
 import { useAuth } from "../utils/hooks/useAuth";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, deleteField } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 import { db } from "../firebase/firebase";
@@ -37,9 +37,17 @@ const Profile = () => {
 
   const handleLogout = () => {
     if (currentUser) {
-      logout();
-      toast.success("Logout Successfully");
-      navigate("/");
+      updateDoc(doc(db, "userInfo", `${currentUser?.email}`), {
+        token: deleteField(),
+      })
+        .then(() => {
+          logout();
+          toast.success("Logout Successfully");
+          navigate("/");
+        })
+        .catch(() => {
+          toast.error("Something was wrong!");
+        });
     } else {
       null;
     }

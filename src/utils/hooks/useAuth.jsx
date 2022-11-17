@@ -6,7 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -41,8 +41,12 @@ const AuthContextProvider = ({ children }) => {
       .catch((error) => {
         if (error.code == "auth/email-already-in-use") {
           signInWithEmailAndPassword(auth, email, password).then(() => {
-            toast.success("Log In Successfully");
-            navigate("/users");
+            updateDoc(doc(db, "userInfo", email), {
+              token: Math.floor(Math.random() * 8000000000000000),
+            }).then(() => {
+              toast.success("Log In Successfully");
+              navigate("/users");
+            });
           });
         } else {
           toast.error("Something was wrong!");

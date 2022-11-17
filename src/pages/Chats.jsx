@@ -23,6 +23,7 @@ const Chats = () => {
   const [message, setmessage] = useState([]);
   const [input, setinput] = useState("");
   const [image, setimage] = useState("");
+  const [scrollButton, setscrollButton] = useState(false);
   const { currentUser } = useAuth();
   const { email, displayName } = currentUser;
   const { user } = useUsers();
@@ -37,13 +38,13 @@ const Chats = () => {
   const myId = myData[0];
 
   //automatic scroll down function
-  const scroll = () => {
+  const scroll = (time) => {
     setTimeout(() => {
       window.scrollTo({
         top: 99999999999999999,
         behavior: "smooth",
       });
-    }, 800);
+    }, time);
   };
 
   //when the currentUser first time enter the chat user then create a document
@@ -68,11 +69,11 @@ const Chats = () => {
         setmessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       });
       //
-      scroll();
+      scroll(800);
     };
     get_msg();
   }, []);
-  scroll();
+  // scroll(800);
   //submit data
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -93,10 +94,17 @@ const Chats = () => {
       setinput("");
       setimage("");
       //
-      scroll();
+      scroll(300);
     }
   };
-
+  window.onscroll = () => {
+    const scrollData = window.scrollY;
+    if (scrollData < 2000) {
+      setscrollButton(true);
+    } else {
+      setscrollButton(false);
+    }
+  };
   return (
     <>
       <nav className="chat_nav">
@@ -145,6 +153,11 @@ const Chats = () => {
           <i className="fa-solid fa-paper-plane"></i>
         </button>
       </form>
+      {scrollButton && (
+        <div className="arrow" onClick={() => scroll(300)}>
+          <i className="fa-solid fa-arrow-down"></i>
+        </div>
+      )}
     </>
   );
 };

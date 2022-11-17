@@ -6,9 +6,14 @@ export const User = ({ data }) => {
     <>
       <Link to={`/users/chats?${data?.uid}`} key={data?.uid}>
         <div className="user">
-          <div className={data?.token ? "active" : "deactive"}></div>
           <Avatar userImg={data?.photo} />
-          <p>{data?.name}</p>
+          <p>
+            {data?.name}{" "}
+            <div
+              className={data?.token ? "active" : "deactive"}
+              title={data?.token ? "User Active" : "User Deactive"}
+            ></div>
+          </p>
         </div>
       </Link>
     </>
