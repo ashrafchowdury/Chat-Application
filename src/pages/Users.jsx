@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/pages/users/user.css";
 import { Link, useNavigate } from "react-router-dom";
 //
@@ -8,29 +8,9 @@ import { Avatar } from "../components/Avatar";
 import { User } from "../components/User";
 const Users = () => {
   const { user } = useUsers();
-  const [sortData, setsortData] = useState([]);
   const [search, setsearch] = useState("");
   const { currentUser, name } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const ordarize_the_users = () => {
-      user.map((value) => {
-        if (value.token) {
-          return sortData.unshift(value);
-        }
-        if (!value.token) {
-          return sortData.push(value);
-        }
-      });
-      let uniqueChars = sortData.filter((element, index) => {
-        return sortData.indexOf(element) == index;
-      });
-      setsortData(uniqueChars);
-    };
-
-    ordarize_the_users();
-  }, [user]);
 
   return (
     <>
@@ -59,9 +39,25 @@ const Users = () => {
       </section>
 
       <main className="users_section">
-        {sortData
+        {user
           .filter((value) => {
             return value?.id != currentUser?.email;
+          })
+          .filter((value) => {
+            return value?.token;
+          })
+          .filter((value) => {
+            return value?.name?.toLowerCase().includes(search.toLowerCase());
+          })
+          .map((val) => {
+            return <User data={val} />;
+          })}
+        {user
+          .filter((value) => {
+            return value?.id != currentUser?.email;
+          })
+          .filter((value) => {
+            return !value?.token;
           })
           .filter((value) => {
             return value?.name?.toLowerCase().includes(search.toLowerCase());

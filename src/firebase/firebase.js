@@ -4,18 +4,17 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBEGAZ84gWshJjDRSSMWrM77TfiXrPM0-U",
-  authDomain: "creative-chat-v2.firebaseapp.com",
-  projectId: "creative-chat-v2",
-  storageBucket: "creative-chat-v2.appspot.com",
-  messagingSenderId: "523352368824",
-  appId: "1:523352368824:web:e868116ccb12298909364d",
-  measurementId: "G-S322SH0QNR",
+  apiKey: `${import.meta.env.VITE_APP_FIREBAS_API_KEY}`,
+  authDomain: `${import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN}`,
+  projectId: `${import.meta.env.VITE_APP_FIREBASE_PROJECT_ID}`,
+  storageBucket: `${import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET}`,
+  messagingSenderId: `${import.meta.env.VITE_APP_FIREBASE_MSG_SENDER_ID}`,
+  appId: `${import.meta.env.VITE_APP_FIREBASE_APP_ID}`,
+  measurementId: `${import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID}`,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);

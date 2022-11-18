@@ -73,7 +73,7 @@ const Chats = () => {
     };
     get_msg();
   }, []);
-  // scroll(800);
+  scroll(800);
   //submit data
   const handleSubmit = async (e) => {
     e.preventDefault();
