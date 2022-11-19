@@ -16,11 +16,10 @@ body {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: #f3f4fd;
+  background-color: white;
 }
 .chat_nav i {
   font-size: 2.2rem;
-  color: #464D51;
   margin-right: 45px;
   cursor: pointer;
 }
@@ -61,11 +60,11 @@ body {
   cursor: pointer;
 }
 .user_chats .left_user p {
-  color: #f3f4fd;
+  color: white;
   font-weight: 500;
   font-size: 18px;
   padding: 10px 30px;
-  background: #4d88ff;
+  background: #4e86fe;
   border-radius: 50px 50px 50px 0px;
 }
 .user_chats .left_user .msg_time {
@@ -112,7 +111,7 @@ body {
   font-weight: 500;
   font-size: 18px;
   padding: 10px 30px;
-  background-color: #5342de;
+  background-color: #5344df;
   border-radius: 50px 50px 0px 50px;
   cursor: pointer;
 }
@@ -126,7 +125,7 @@ body {
 
 .messsage_div {
   width: 1100px;
-  background-color: #f3f4fd;
+  background-color: white;
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
@@ -164,7 +163,7 @@ body {
   width: 100%;
 }
 .messsage_div .fa-paper-plane {
-  color: #4d88ff;
+  color: #4e86fe;
   font-size: 1.8rem;
   margin-left: 20px;
   cursor: pointer;
@@ -181,7 +180,7 @@ body {
   padding: 8px 15px;
   border-radius: 50px;
   color: white;
-  background-color: #5342de;
+  background-color: #5344df;
   transition-duration: 0.5s;
 }
 .arrow:hover {
@@ -203,11 +202,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: #f3f4fd;
+    background-color: white;
   }
   .chat_nav i {
     font-size: 2rem;
-    color: #464D51;
     margin-right: 45px;
     cursor: pointer;
   }
@@ -247,11 +245,11 @@ body {
     cursor: pointer;
   }
   .user_chats .left_user p {
-    color: #f3f4fd;
+    color: white;
     font-weight: 500;
     font-size: 18px;
     padding: 10px 30px;
-    background: #4d88ff;
+    background: #4e86fe;
     border-radius: 50px 50px 50px 0px;
   }
   .user_chats .left_user .msg_time {
@@ -298,7 +296,7 @@ body {
     font-weight: 500;
     font-size: 18px;
     padding: 10px 30px;
-    background-color: #5342de;
+    background-color: #5344df;
     border-radius: 50px 50px 0px 50px;
     cursor: pointer;
   }
@@ -311,7 +309,7 @@ body {
   }
   .messsage_div {
     width: 750px;
-    background-color: #f3f4fd;
+    background-color: white;
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
@@ -349,7 +347,7 @@ body {
     width: 100%;
   }
   .messsage_div .fa-paper-plane {
-    color: #4d88ff;
+    color: #4e86fe;
     font-size: 1.8rem;
     margin-left: 20px;
     cursor: pointer;
@@ -370,11 +368,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: #f3f4fd;
+    background-color: white;
   }
   .chat_nav i {
     font-size: 1.8rem;
-    color: #464D51;
     margin-right: 25px;
     cursor: pointer;
   }
@@ -414,11 +411,11 @@ body {
     cursor: pointer;
   }
   .user_chats .left_user p {
-    color: #f3f4fd;
+    color: white;
     font-weight: 500;
     font-size: 16px;
     padding: 10px 30px;
-    background: #4d88ff;
+    background: #4e86fe;
     border-radius: 50px 50px 50px 0px;
   }
   .user_chats .left_user .msg_time {
@@ -465,7 +462,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     padding: 10px 30px;
-    background-color: #5342de;
+    background-color: #5344df;
     border-radius: 50px 50px 0px 50px;
     cursor: pointer;
   }
@@ -478,7 +475,7 @@ body {
   }
   .messsage_div {
     width: 550px;
-    background-color: #f3f4fd;
+    background-color: white;
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
@@ -516,7 +513,7 @@ body {
     width: 100%;
   }
   .messsage_div .fa-paper-plane {
-    color: #4d88ff;
+    color: #4e86fe;
     font-size: 1.8rem;
     margin-left: 20px;
     cursor: pointer;
@@ -537,11 +534,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: #f3f4fd;
+    background-color: white;
   }
   .chat_nav i {
     font-size: 1.6rem;
-    color: #464D51;
     margin-right: 25px;
     cursor: pointer;
   }
@@ -581,11 +577,11 @@ body {
     cursor: pointer;
   }
   .user_chats .left_user p {
-    color: #f3f4fd;
+    color: white;
     font-weight: 500;
     font-size: 14px;
     padding: 9px 25px;
-    background: #4d88ff;
+    background: #4e86fe;
     border-radius: 50px 50px 50px 0px;
   }
   .user_chats .left_user .msg_time {
@@ -632,7 +628,7 @@ body {
     font-weight: 500;
     font-size: 14px;
     padding: 9px 25px;
-    background-color: #5342de;
+    background-color: #5344df;
     border-radius: 50px 50px 0px 50px;
     cursor: pointer;
   }
@@ -645,7 +641,7 @@ body {
   }
   .messsage_div {
     width: 100%;
-    background-color: #f3f4fd;
+    background-color: white;
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
@@ -683,7 +679,7 @@ body {
     width: 100%;
   }
   .messsage_div .fa-paper-plane {
-    color: #4d88ff;
+    color: #4e86fe;
     font-size: 1.5rem;
     margin-left: 14px;
     cursor: pointer;

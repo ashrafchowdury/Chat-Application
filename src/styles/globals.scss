@@ -6,10 +6,11 @@
   font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
+  color: rgb(67, 67, 67);
 }
 body {
   overflow-x: hidden;
-  background-color: $body;
+  background-color: $white;
 }
 a {
   text-decoration: none;
@@ -17,11 +18,9 @@ a {
 p,
 button {
   font-size: 16px;
-  color: $font;
 }
 h1 {
   font-size: 58px;
-  color: $font;
 }
 
 .button {
@@ -30,7 +29,7 @@ h1 {
   font-size: 16px;
   font-weight: bold;
   border-radius: 50px;
-  background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+  background: linear-gradient(270deg, $purple 0%, $blue 100%);
   color: white;
   cursor: pointer;
   letter-spacing: 1px;
@@ -45,7 +44,7 @@ h1 {
   display: flex;
   position: relative;
   span {
-    background-color: #5344df;
+    background-color: $purple;
     padding: 10px 15px;
     border-radius: 50px;
     color: white;
@@ -54,6 +53,7 @@ h1 {
     left: 7px;
     i {
       font-size: 18px;
+      color: $white;
     }
   }
   input {
@@ -61,21 +61,21 @@ h1 {
     padding: 13px 60px;
     border-radius: 50px;
     width: 100%;
-    border: 3px solid #5344df;
+    border: 3px solid $purple;
     background-color: transparent;
   }
 }
 
-// ::-webkit-scrollbar {
-//   width: 5px;
-// }
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background: #cacaca2a;
-//   border-radius: 10px;
-// }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cacaca2a;
+  border-radius: 10px;
+}
 
 @media screen and (max-width: 1050px) {
   p,
@@ -89,7 +89,7 @@ h1 {
     display: flex;
     position: relative;
     span {
-      background-color: #5344df;
+      background-color: $purple;
       padding: 8px 13px;
       border-radius: 50px;
       color: white;
@@ -105,7 +105,7 @@ h1 {
       padding: 11px 54px;
       border-radius: 50px;
       width: 100%;
-      border: 3px solid #5344df;
+      border: 3px solid $purple;
       background-color: transparent;
     }
   }
@@ -120,7 +120,7 @@ h1 {
     font-size: 14px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+    background: linear-gradient(270deg, $purple 0%, $blue 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
@@ -142,7 +142,7 @@ h1 {
     font-size: 12px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+    background: linear-gradient(270deg, $purple 0%, $blue 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
@@ -152,7 +152,7 @@ h1 {
     display: flex;
     position: relative;
     span {
-      background-color: #5344df;
+      background-color: $purple;
       padding: 5px 10px;
       border-radius: 50px;
       color: white;
@@ -168,7 +168,7 @@ h1 {
       padding: 10px 46px;
       border-radius: 50px;
       width: 100%;
-      border: 2px solid #5344df;
+      border: 2px solid $purple;
       background-color: transparent;
     }
   }

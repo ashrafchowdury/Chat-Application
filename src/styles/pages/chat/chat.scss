@@ -17,10 +17,9 @@ body {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: $body;
+  background-color: $white;
   i {
     font-size: 2.2rem;
-    color: $font;
     margin-right: 45px;
     cursor: pointer;
   }
@@ -52,11 +51,11 @@ body {
     @include flex($direc: column, $items: flex-start);
     cursor: pointer;
     p {
-      color: $body;
+      color: $white;
       font-weight: 500;
       font-size: 18px;
       padding: 10px 30px;
-      background: #4d88ff;
+      background: $blue;
       border-radius: 50px 50px 50px 0px;
     }
     .msg_time {
@@ -94,11 +93,11 @@ body {
       }
     }
     p {
-      color: white;
+      color: $white;
       font-weight: 500;
       font-size: 18px;
       padding: 10px 30px;
-      background-color: #5342de;
+      background-color: $purple;
       border-radius: 50px 50px 0px 50px;
       cursor: pointer;
     }
@@ -114,7 +113,7 @@ body {
 
 .messsage_div {
   width: 1100px;
-  background-color: $body;
+  background-color: $white;
   margin: 0px auto;
   @include flex($content: space-between);
   position: fixed;
@@ -137,7 +136,7 @@ body {
       // border: 2px solid red;
       i {
         font-size: 1.6rem;
-        color: #4e86fe;
+        color: $blue;
       }
       input {
         opacity: 0;
@@ -150,7 +149,7 @@ body {
     }
   }
   .fa-paper-plane {
-    color: #4d88ff;
+    color: $blue;
     font-size: 1.8rem;
     margin-left: 20px;
     cursor: pointer;
@@ -166,8 +165,8 @@ body {
   cursor: pointer;
   padding: 8px 15px;
   border-radius: 50px;
-  color: white;
-  background-color: #5342de;
+  color: $white;
+  background-color: $purple;
   transition-duration: 0.5s;
   &:hover {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
@@ -185,10 +184,9 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+    background-color: $white;
     i {
       font-size: 2rem;
-      color: $font;
       margin-right: 45px;
       cursor: pointer;
     }
@@ -219,11 +217,11 @@ body {
       @include flex($direc: column, $items: flex-start);
       cursor: pointer;
       p {
-        color: $body;
+        color: $white;
         font-weight: 500;
         font-size: 18px;
         padding: 10px 30px;
-        background: #4d88ff;
+        background: $blue;
         border-radius: 50px 50px 50px 0px;
       }
       .msg_time {
@@ -261,11 +259,11 @@ body {
         }
       }
       p {
-        color: white;
+        color: $white;
         font-weight: 500;
         font-size: 18px;
         padding: 10px 30px;
-        background-color: #5342de;
+        background-color: $purple;
         border-radius: 50px 50px 0px 50px;
         cursor: pointer;
       }
@@ -280,7 +278,7 @@ body {
   }
   .messsage_div {
     width: 750px;
-    background-color: $body;
+    background-color: $white;
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -303,7 +301,7 @@ body {
         // border: 2px solid red;
         i {
           font-size: 1.6rem;
-          color: #4e86fe;
+          color: $blue;
         }
         input {
           opacity: 0;
@@ -316,7 +314,7 @@ body {
       }
     }
     .fa-paper-plane {
-      color: #4d88ff;
+      color: $blue;
       font-size: 1.8rem;
       margin-left: 20px;
       cursor: pointer;
@@ -335,10 +333,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+    background-color: $white;
     i {
       font-size: 1.8rem;
-      color: $font;
+
       margin-right: 25px;
       cursor: pointer;
     }
@@ -369,11 +367,11 @@ body {
       @include flex($direc: column, $items: flex-start);
       cursor: pointer;
       p {
-        color: $body;
+        color: $white;
         font-weight: 500;
         font-size: 16px;
         padding: 10px 30px;
-        background: #4d88ff;
+        background: $blue;
         border-radius: 50px 50px 50px 0px;
       }
       .msg_time {
@@ -411,11 +409,11 @@ body {
         }
       }
       p {
-        color: white;
+        color: $white;
         font-weight: 500;
         font-size: 16px;
         padding: 10px 30px;
-        background-color: #5342de;
+        background-color: $purple;
         border-radius: 50px 50px 0px 50px;
         cursor: pointer;
       }
@@ -430,7 +428,7 @@ body {
   }
   .messsage_div {
     width: 550px;
-    background-color: $body;
+    background-color: $white;
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -453,7 +451,7 @@ body {
         // border: 2px solid red;
         i {
           font-size: 1.6rem;
-          color: #4e86fe;
+          color: $blue;
         }
         input {
           opacity: 0;
@@ -466,7 +464,7 @@ body {
       }
     }
     .fa-paper-plane {
-      color: #4d88ff;
+      color: $blue;
       font-size: 1.8rem;
       margin-left: 20px;
       cursor: pointer;
@@ -485,10 +483,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+    background-color: $white;
     i {
       font-size: 1.6rem;
-      color: $font;
+
       margin-right: 25px;
       cursor: pointer;
     }
@@ -519,11 +517,11 @@ body {
       @include flex($direc: column, $items: flex-start);
       cursor: pointer;
       p {
-        color: $body;
+        color: $white;
         font-weight: 500;
         font-size: 14px;
         padding: 9px 25px;
-        background: #4d88ff;
+        background: $blue;
         border-radius: 50px 50px 50px 0px;
       }
       .msg_time {
@@ -561,11 +559,11 @@ body {
         }
       }
       p {
-        color: white;
+        color: $white;
         font-weight: 500;
         font-size: 14px;
         padding: 9px 25px;
-        background-color: #5342de;
+        background-color: $purple;
         border-radius: 50px 50px 0px 50px;
         cursor: pointer;
       }
@@ -580,7 +578,7 @@ body {
   }
   .messsage_div {
     width: 100%;
-    background-color: $body;
+    background-color: $white;
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -603,7 +601,7 @@ body {
         // border: 2px solid red;
         i {
           font-size: 1.2rem;
-          color: #4e86fe;
+          color: $blue;
         }
         input {
           opacity: 0;
@@ -616,7 +614,7 @@ body {
       }
     }
     .fa-paper-plane {
-      color: #4d88ff;
+      color: $blue;
       font-size: 1.5rem;
       margin-left: 14px;
       cursor: pointer;

@@ -5,11 +5,12 @@
   font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
+  color: rgb(67, 67, 67);
 }
 
 body {
   overflow-x: hidden;
-  background-color: #f3f4fd;
+  background-color: white;
 }
 
 a {
@@ -19,12 +20,10 @@ a {
 p,
 button {
   font-size: 16px;
-  color: #464D51;
 }
 
 h1 {
   font-size: 58px;
-  color: #464D51;
 }
 
 .button {
@@ -33,7 +32,7 @@ h1 {
   font-size: 16px;
   font-weight: bold;
   border-radius: 50px;
-  background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+  background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
   color: white;
   cursor: pointer;
   letter-spacing: 1px;
@@ -60,6 +59,7 @@ h1 {
 }
 .input_div span i {
   font-size: 18px;
+  color: white;
 }
 .input_div input {
   font-size: 18px;
@@ -68,6 +68,19 @@ h1 {
   width: 100%;
   border: 3px solid #5344df;
   background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(202, 202, 202, 0.1647058824);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -113,7 +126,7 @@ button {
     font-size: 14px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+    background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
@@ -134,7 +147,7 @@ button {
     font-size: 12px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5342de 0%, #4d88ff 100%);
+    background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;

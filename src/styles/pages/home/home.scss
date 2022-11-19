@@ -29,7 +29,7 @@ header {
     font-weight: bold;
     line-height: 110px;
     span {
-      background: linear-gradient(266.78deg, #5344df 8.99%, #4e86fe 59.83%);
+      background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -76,7 +76,7 @@ footer {
       font-weight: bold;
       line-height: 100px;
       span {
-        background: linear-gradient(266.78deg, #5344df 8.99%, #4e86fe 59.83%);
+        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -106,7 +106,7 @@ footer {
       font-weight: bold;
       line-height: 80px;
       span {
-        background: linear-gradient(266.78deg, #5344df 8.99%, #4e86fe 59.83%);
+        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -155,7 +155,7 @@ footer {
       font-weight: bold;
       line-height: 55px;
       span {
-        background: linear-gradient(266.78deg, #5344df 8.99%, #4e86fe 59.83%);
+        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
