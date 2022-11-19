@@ -4,13 +4,13 @@ import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: `${import.meta.env.VITE_APP_FIREBAS_API_KEY}`,
-  authDomain: `${import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN}`,
-  projectId: `${import.meta.env.VITE_APP_FIREBASE_PROJECT_ID}`,
-  storageBucket: `${import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET}`,
-  messagingSenderId: `${import.meta.env.VITE_APP_FIREBASE_MSG_SENDER_ID}`,
-  appId: `${import.meta.env.VITE_APP_FIREBASE_APP_ID}`,
-  measurementId: `${import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID}`,
+  apiKey: `${import.meta.env.VITE_SOME_FIREBAS_API_KEY}`,
+  authDomain: `${import.meta.env.VITE_SOME_FIREBASE_AUTH_DOMAIN}`,
+  projectId: `${import.meta.env.VITE_SOME_FIREBASE_PROJECT_ID}`,
+  storageBucket: `${import.meta.env.VITE_SOME_FIREBASE_STORAGE_BUCKET}`,
+  messagingSenderId: `${import.meta.env.VITE_SOME_FIREBASE_MSG_SENDER_ID}`,
+  appId: `${import.meta.env.VITE_SOME_FIREBASE_APP_ID}`,
+  measurementId: `${import.meta.env.VITE_SOME_FIREBASE_MEASUREMENT_ID}`,
 };
 
 // Initialize Firebase
