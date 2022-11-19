@@ -23,11 +23,9 @@ const Chats = () => {
   const [message, setmessage] = useState([]);
   const [input, setinput] = useState("");
   const [image, setimage] = useState("");
-  const [scrollButton, setscrollButton] = useState(false);
   const { currentUser } = useAuth();
   const { email, displayName } = currentUser;
   const { user } = useUsers();
-  const navigate = useNavigate();
   //
   const id = window.location.search.slice(1);
   //filter chat user data
@@ -97,14 +95,7 @@ const Chats = () => {
       scroll(300);
     }
   };
-  window.onscroll = () => {
-    const scrollData = window.scrollY;
-    if (scrollData < 2000) {
-      setscrollButton(true);
-    } else {
-      setscrollButton(false);
-    }
-  };
+
   return (
     <>
       <nav className="chat_nav">
@@ -153,11 +144,6 @@ const Chats = () => {
           <i className="fa-solid fa-paper-plane"></i>
         </button>
       </form>
-      {scrollButton && (
-        <div className="arrow" onClick={() => scroll(300)}>
-          <i className="fa-solid fa-arrow-down"></i>
-        </div>
-      )}
     </>
   );
 };
