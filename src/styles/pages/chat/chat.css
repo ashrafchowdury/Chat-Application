@@ -16,7 +16,7 @@ body {
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: white;
+  background-color: rgb(22, 22, 36);
 }
 .chat_nav i {
   font-size: 2.2rem;
@@ -125,7 +125,7 @@ body {
 
 .messsage_div {
   width: 1100px;
-  background-color: white;
+  background-color: rgb(22, 22, 36);
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
@@ -162,11 +162,14 @@ body {
 .messsage_div .message .input_div {
   width: 100%;
 }
-.messsage_div .fa-paper-plane {
+.messsage_div button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.messsage_div button .fa-paper-plane {
   color: #4e86fe;
   font-size: 1.8rem;
   margin-left: 20px;
-  cursor: pointer;
 }
 
 .arrow {
@@ -202,7 +205,7 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: white;
+    background-color: rgb(22, 22, 36);
   }
   .chat_nav i {
     font-size: 2rem;
@@ -309,7 +312,7 @@ body {
   }
   .messsage_div {
     width: 750px;
-    background-color: white;
+    background-color: rgb(22, 22, 36);
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
@@ -368,7 +371,7 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: white;
+    background-color: rgb(22, 22, 36);
   }
   .chat_nav i {
     font-size: 1.8rem;
@@ -475,7 +478,7 @@ body {
   }
   .messsage_div {
     width: 550px;
-    background-color: white;
+    background-color: rgb(22, 22, 36);
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
@@ -534,7 +537,7 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: white;
+    background-color: rgb(22, 22, 36);
   }
   .chat_nav i {
     font-size: 1.6rem;
@@ -641,7 +644,7 @@ body {
   }
   .messsage_div {
     width: 100%;
-    background-color: white;
+    background-color: rgb(22, 22, 36);
     margin: 0px auto;
     display: flex;
     justify-content: space-between;
