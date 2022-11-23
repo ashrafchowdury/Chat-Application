@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "../styles/pages/profile/profile.css";
-import { Avatar } from "../components/Avatar";
+const Avatar = lazy(() => import("../components/Avatar"));
 import { useAuth } from "../utils/hooks/useAuth";
 import { doc, updateDoc, deleteField } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
@@ -76,7 +76,9 @@ const Profile = () => {
                 imageUpload(e.target.files[0], "files", setimage)
               }
             />
-            <Avatar userImg={currentUser?.photoURL} />
+            <Suspense>
+              <Avatar userImg={currentUser?.photoURL} />
+            </Suspense>
           </div>
           <input
             type="name"

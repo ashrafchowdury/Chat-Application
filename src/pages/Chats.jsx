@@ -1,4 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  lazy,
+  Suspense,
+  Fragment,
+} from "react";
 import "../styles/pages/chat/chat.css";
 import {
   onSnapshot,
@@ -10,10 +16,11 @@ import {
   serverTimestamp,
   addDoc,
 } from "firebase/firestore";
-import { Message } from "../components/Message";
+
+const Message = lazy(() => import("../components/Message"));
+const Avatar = lazy(() => import("../components/Avatar"));
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import { Avatar } from "../components/Avatar";
 import { useAuth } from "../utils/hooks/useAuth";
 import { useUsers } from "../utils/hooks/useUsers";
 import { db } from "../firebase/firebase";
@@ -44,6 +51,9 @@ const Chats = () => {
       });
     }, time);
   };
+  useEffect(() => {
+    scroll(300);
+  }, [message]);
 
   //when the currentUser first time enter the chat user then create a document
   useEffect(() => {
@@ -66,16 +76,14 @@ const Chats = () => {
       const userData = onSnapshot(q, (snapshot) => {
         setmessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       });
-      //
       scroll(800);
     };
     get_msg();
   }, []);
-  scroll(800);
+
   //submit data
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const q = query(
       collection(db, "message", `${myId?.uid + userId?.uid}`, "data")
     );
@@ -91,8 +99,6 @@ const Chats = () => {
       });
       setinput("");
       setimage("");
-      //
-      scroll(300);
     }
   };
 
@@ -104,14 +110,32 @@ const Chats = () => {
           onClick={() => window.history.back()}
         ></i>
         <div className="user">
-          <Avatar userImg={userId.photo} />
+          <Suspense>
+            <Avatar userImg={userId.photo} />
+          </Suspense>
           <h1>{userId.name}</h1>
         </div>
       </nav>
 
       <section className="user_chats">
         {message.map((val) => {
-          return <Message val={val} userId={userId} myId={myId} />;
+          return (
+            <Fragment key={val?.id}>
+              <Suspense
+                fallback={
+                  <p
+                    className={
+                      val?.uid == currentUser?.uid ? "right_user" : "left_user"
+                    }
+                  >
+                    Loading...
+                  </p>
+                }
+              >
+                <Message val={val} userId={userId} myId={myId} />
+              </Suspense>
+            </Fragment>
+          );
         })}
       </section>
 

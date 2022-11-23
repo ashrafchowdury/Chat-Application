@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 import { doc, deleteDoc } from "firebase/firestore";
-import { getStorage, ref, deleteObject } from "firebase/storage";
 import { db } from "../firebase/firebase";
 import { useAuth } from "../utils/hooks/useAuth";
 //
 import { toast } from "react-hot-toast";
 
-export const Message = ({ val, userId, myId }) => {
-  const [imgTrash, setimgTrash] = useState(false);
-  //
+const Message = ({ val, userId, myId }) => {
   const { currentUser } = useAuth();
-  const { email, displayName } = currentUser;
-
-  //
   const handleMsgDelete = async (id) => {
     await deleteDoc(
       doc(db, "message", `${myId?.uid + userId?.uid}`, "data", id)
@@ -20,13 +14,6 @@ export const Message = ({ val, userId, myId }) => {
     toast.success("Message Deleted");
   };
 
-  //Working on the image deleting feature
-  const handleImageTrash = async (id, imageUrl) => {
-    //delete from document
-    // const delete_doc = await deleteDoc(
-    //   doc(db, "message", `${myId?.uid + userId?.uid}`, "data", id)
-    // );
-  };
   const handleDownload = (imageUrl) => {
     const a = document.createElement("a");
     a.href = imageUrl;
@@ -42,7 +29,6 @@ export const Message = ({ val, userId, myId }) => {
     <>
       <div
         className={val?.uid == currentUser?.uid ? "right_user" : "left_user"}
-        key={val?.id}
       >
         {val.img ? (
           <>
@@ -51,6 +37,7 @@ export const Message = ({ val, userId, myId }) => {
                 src={val?.img}
                 alt="logo"
                 onDoubleClick={() => handleDownload(val?.img)}
+                loading="lazy"
               />
             </div>
             <span className="msg_time">
@@ -76,3 +63,4 @@ export const Message = ({ val, userId, myId }) => {
     </>
   );
 };
+export default memo(Message);

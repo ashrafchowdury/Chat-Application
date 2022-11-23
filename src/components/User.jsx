@@ -1,14 +1,17 @@
-import React from "react";
+import React, { memo, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import { Avatar } from "./Avatar";
+const Avatar = lazy(() => import("./Avatar"));
 
-export const User = ({ data }) => {
+const User = ({ data }) => {
   return (
     <>
       <Link to={`/users/chats?${data?.uid}`} key={data?.uid}>
         <div className="user">
-          <Avatar userImg={data?.photo} />
-          <p>
+          <Suspense>
+            <Avatar userImg={data?.photo} />
+          </Suspense>
+
+          <p className="text_skeleton">
             {data?.name}{" "}
             <div
               className={data?.token ? "active" : "deactive"}
@@ -20,3 +23,4 @@ export const User = ({ data }) => {
     </>
   );
 };
+export default memo(User);

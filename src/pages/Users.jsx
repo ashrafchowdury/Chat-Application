@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import "../styles/pages/users/user.css";
 import { Link, useNavigate } from "react-router-dom";
 //
 import { useAuth } from "../utils/hooks/useAuth";
 import { useUsers } from "../utils/hooks/useUsers";
-import { Avatar } from "../components/Avatar";
-import { User } from "../components/User";
+import User from "../components/User";
+const Avatar = lazy(() => import("../components/Avatar"));
+
 const Users = () => {
   const { user } = useUsers();
   const [search, setsearch] = useState("");
   const { currentUser, name } = useAuth();
-  const navigate = useNavigate();
 
   return (
     <>
       <nav className="user_nav">
         <div className="user_info">
-          <Avatar userImg={currentUser?.photoURL} />
+          <Suspense>
+            <Avatar userImg={currentUser?.photoURL} />
+          </Suspense>
+
           <h1>{currentUser?.displayName ? currentUser?.displayName : name}</h1>
         </div>
         <Link to="/profile">
