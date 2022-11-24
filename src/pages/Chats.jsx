@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  lazy,
-  Suspense,
-  Fragment,
-} from "react";
+import React, { useState, useEffect, lazy, Suspense, Fragment } from "react";
 import "../styles/pages/chat/chat.css";
 import {
   onSnapshot,
@@ -19,8 +13,7 @@ import {
 
 const Message = lazy(() => import("../components/Message"));
 const Avatar = lazy(() => import("../components/Avatar"));
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+const toast = lazy(() => import("react-hot-toast"));
 import { useAuth } from "../utils/hooks/useAuth";
 import { useUsers } from "../utils/hooks/useUsers";
 import { db } from "../firebase/firebase";
@@ -36,10 +29,10 @@ const Chats = () => {
   //
   const id = window.location.search.slice(1);
   //filter chat user data
-  const userData = user.filter((val) => val.uid == id).map((val) => val);
+  const userData = user?.filter((val) => val.uid == id).map((val) => val);
   const userId = userData[0];
   //filter my data
-  const myData = user.filter((val) => val.id == email).map((val) => val);
+  const myData = user?.filter((val) => val.id == email).map((val) => val);
   const myId = myData[0];
 
   //automatic scroll down function
@@ -79,7 +72,7 @@ const Chats = () => {
       scroll(800);
     };
     get_msg();
-  }, []);
+  }, [userId]);
 
   //submit data
   const handleSubmit = async (e) => {
@@ -111,14 +104,14 @@ const Chats = () => {
         ></i>
         <div className="user">
           <Suspense>
-            <Avatar userImg={userId.photo} />
+            <Avatar userImg={userId?.photo} />
           </Suspense>
-          <h1>{userId.name}</h1>
+          <h1>{userId?.name}</h1>
         </div>
       </nav>
 
       <section className="user_chats">
-        {message.map((val) => {
+        {message?.map((val) => {
           return (
             <Fragment key={val?.id}>
               <Suspense

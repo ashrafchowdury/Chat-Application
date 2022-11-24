@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./styles/globals.css";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
@@ -15,7 +15,7 @@ import Chats from "./pages/Chats";
 import Profile from "./pages/Profile";
 function App() {
   useEffect(() => {
-    AOS.init({ duration: 1500 });
+    AOS.init({ duration: 1000 });
   }, []);
   return (
     <>

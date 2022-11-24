@@ -1,9 +1,9 @@
-import React, { memo } from "react";
+import React, { memo, lazy } from "react";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { useAuth } from "../utils/hooks/useAuth";
 //
-import { toast } from "react-hot-toast";
+const toast = lazy(() => import("react-hot-toast"));
 
 const Message = ({ val, userId, myId }) => {
   const { currentUser } = useAuth();
@@ -29,6 +29,7 @@ const Message = ({ val, userId, myId }) => {
     <>
       <div
         className={val?.uid == currentUser?.uid ? "right_user" : "left_user"}
+        data-aos={val?.uid == currentUser?.uid ? "fade-left" : "fade-right"}
       >
         {val.img ? (
           <>

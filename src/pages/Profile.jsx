@@ -1,10 +1,10 @@
 import React, { useState, lazy, Suspense } from "react";
 import "../styles/pages/profile/profile.css";
 const Avatar = lazy(() => import("../components/Avatar"));
+const toast = lazy(() => import("react-hot-toast"));
 import { useAuth } from "../utils/hooks/useAuth";
 import { doc, updateDoc, deleteField } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
-import toast from "react-hot-toast";
 import { db } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { imageUpload } from "../utils/functions/imageUpload";
@@ -56,7 +56,7 @@ const Profile = () => {
   if (currentUser) {
     return (
       <>
-        <nav className="profile_nav">
+        <nav className="profile_nav" data-aos="fade-down">
           <span>
             <i
               className="fa-solid fa-arrow-left"
@@ -68,7 +68,12 @@ const Profile = () => {
           </button>
         </nav>
 
-        <form action="" className="profile_update" onSubmit={updateUserProfile}>
+        <form
+          action=""
+          className="profile_update"
+          onSubmit={updateUserProfile}
+          data-aos="zoom-in"
+        >
           <div>
             <input
               type="file"

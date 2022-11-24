@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, lazy } from "react";
 import "../styles/pages/home/home.css";
 import { useAuth } from "../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+const toast = lazy(() => import("react-hot-toast"));
 
 const Home = () => {
   const [email, setemail] = useState("");
@@ -35,7 +35,7 @@ const Home = () => {
           </a>
         </nav>
 
-        <header>
+        <header data-aos="zoom-in">
           <h1>
             <span>Securely Communicate</span> <br /> With Others
           </h1>

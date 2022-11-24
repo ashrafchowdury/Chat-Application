@@ -2,8 +2,8 @@ import React, { useState, useEffect, createContext, useContext } from "react";
 import { db } from "../../firebase/firebase";
 import { onSnapshot, collection, query } from "firebase/firestore";
 
-export const UserContext = createContext();
 
+export const UserContext = createContext();
 export const useUsers = () => useContext(UserContext);
 
 const UserDataProvider = ({ children }) => {

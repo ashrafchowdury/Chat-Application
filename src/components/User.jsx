@@ -1,12 +1,14 @@
 import React, { memo, lazy, Suspense } from "react";
-import { Link } from "react-router-dom";
+const Link = lazy(() =>
+  import("react-router-dom").then((module) => ({ default: module.Link }))
+);
 const Avatar = lazy(() => import("./Avatar"));
 
 const User = ({ data }) => {
   return (
     <>
-      <Link to={`/users/chats?${data?.uid}`} key={data?.uid}>
-        <div className="user">
+      <Link to={`/users/chats?${data?.uid}`}>
+        <div className="user" data-aos="fade-up">
           <Suspense>
             <Avatar userImg={data?.photo} />
           </Suspense>

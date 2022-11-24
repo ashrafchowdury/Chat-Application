@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, lazy } from "react";
 import { auth } from "../../firebase/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -8,14 +8,17 @@ import {
 } from "firebase/auth";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
-import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+const toast = lazy(() => import("react-hot-toast"));
+import { useNavigate, useLocation } from "react-router-dom";
+
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setcurrentUser] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setcurrentUser(user);
@@ -23,6 +26,13 @@ const AuthContextProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
+  }, []);
+  useEffect(() => {
+    const path = location.pathname;
+    !currentUser &&
+    (path == "/users" || path == "/profile" || path == "/users/chats")
+      ? navigate("/")
+      : null;
   }, []);
 
   const signin = (email) => {

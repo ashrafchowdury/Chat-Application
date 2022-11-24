@@ -4,7 +4,6 @@ import "../styles/components/components.css";
 const Avatar = ({ userImg }) => {
   const image =
     "https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png";
-
   return (
     <>
       <img
