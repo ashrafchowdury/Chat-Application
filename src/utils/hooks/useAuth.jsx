@@ -8,8 +8,8 @@ import {
 } from "firebase/auth";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
-const toast = lazy(() => import("react-hot-toast"));
-import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -17,7 +17,6 @@ export const useAuth = () => useContext(AuthContext);
 const AuthContextProvider = ({ children }) => {
   const [currentUser, setcurrentUser] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -27,21 +26,18 @@ const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-  useEffect(() => {
-    const path = location.pathname;
-    !currentUser &&
-    (path == "/users" || path == "/profile" || path == "/users/chats")
-      ? navigate("/")
-      : null;
-  }, []);
 
+  // User Signup and Signin
   const signin = (email) => {
+    //create paswwoed
     const password = email.slice(0, email.indexOf("@"));
+    // user signup
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
+        //Create a doc
         setDoc(doc(db, "userInfo", email), {
           uid: Math.floor(Math.random() * 900000000000000),
-          name: `${password}`,
+          name: `${password}`, // user password is user default name
           token: Math.floor(Math.random() * 8000000000000000),
         }).then(() => {
           toast.success("Sign Up Successfully");
@@ -50,7 +46,9 @@ const AuthContextProvider = ({ children }) => {
       })
       .catch((error) => {
         if (error.code == "auth/email-already-in-use") {
+          // user signin
           signInWithEmailAndPassword(auth, email, password).then(() => {
+            //update the doc
             updateDoc(doc(db, "userInfo", email), {
               token: Math.floor(Math.random() * 8000000000000000),
             }).then(() => {
@@ -63,9 +61,11 @@ const AuthContextProvider = ({ children }) => {
         }
       });
   };
+  // user Logout
   const logout = () => {
     return signOut(auth);
   };
+  // Create name for user
   const name = currentUser?.displayName
     ? currentUser?.displayName
     : currentUser?.email?.slice(0, currentUser?.email?.indexOf("@"));

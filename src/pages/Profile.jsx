@@ -1,27 +1,36 @@
 import React, { useState, lazy, Suspense } from "react";
 import "../styles/pages/profile/profile.css";
+// lazy load component
 const Avatar = lazy(() => import("../components/Avatar"));
-const toast = lazy(() => import("react-hot-toast"));
+//
 import { useAuth } from "../utils/hooks/useAuth";
 import { doc, updateDoc, deleteField } from "firebase/firestore";
 import { updateProfile } from "firebase/auth";
 import { db } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { imageUpload } from "../utils/functions/imageUpload";
+import { toast } from "react-hot-toast";
 
 const Profile = () => {
-  const { currentUser, name, logout } = useAuth();
   const [username, setusername] = useState("");
   const [image, setimage] = useState("");
+  const { currentUser, name, logout } = useAuth();
   const navigate = useNavigate();
+
+  // Update User profile
   const updateUserProfile = async (e) => {
     e.preventDefault();
-    if (image || currentUser) {
+
+    if (!image && !username) {
+      return;
+    } else {
       try {
+        // Update the authentication
         await updateProfile(currentUser, {
           displayName: username ? username : name,
           photoURL: image ? image : currentUser.photoURL,
         });
+        // Update from the database
         await updateDoc(doc(db, "userInfo", `${currentUser?.email}`), {
           photo: image ? image : currentUser.photoURL,
           name: username ? username : name,
@@ -35,71 +44,61 @@ const Profile = () => {
     }
   };
 
+  //Logout user
   const handleLogout = () => {
-    if (currentUser) {
-      updateDoc(doc(db, "userInfo", `${currentUser?.email}`), {
-        token: deleteField(),
+    updateDoc(doc(db, "userInfo", `${currentUser?.email}`), {
+      token: deleteField(),
+    })
+      .then(() => {
+        logout();
+        toast.success("Logout Successfully");
+        navigate("/");
       })
-        .then(() => {
-          logout();
-          toast.success("Logout Successfully");
-          navigate("/");
-        })
-        .catch(() => {
-          toast.error("Something was wrong!");
-        });
-    } else {
-      null;
-    }
+      .catch((err) => {
+        toast.error("Something was wrong!");
+      });
   };
 
-  if (currentUser) {
-    return (
-      <>
-        <nav className="profile_nav" data-aos="fade-down">
-          <span>
-            <i
-              className="fa-solid fa-arrow-left"
-              onClick={() => window.history.back()}
-            ></i>
-          </span>
-          <button className="button" onClick={handleLogout}>
-            Log Out
-          </button>
-        </nav>
+  return (
+    <>
+      <nav className="profile_nav" data-aos="fade-down">
+        <span>
+          <i
+            className="fa-solid fa-arrow-left"
+            onClick={() => window.history.back()}
+          ></i>
+        </span>
+        <button className="button" onClick={handleLogout}>
+          Log Out
+        </button>
+      </nav>
 
-        <form
-          action=""
-          className="profile_update"
-          onSubmit={updateUserProfile}
-          data-aos="zoom-in"
-        >
-          <div>
-            <input
-              type="file"
-              onChange={(e) =>
-                imageUpload(e.target.files[0], "files", setimage)
-              }
-            />
-            <Suspense>
-              <Avatar userImg={currentUser?.photoURL} />
-            </Suspense>
-          </div>
+      <form
+        className="profile_update"
+        onSubmit={updateUserProfile}
+        data-aos="zoom-in"
+      >
+        <div>
           <input
-            type="name"
-            placeholder={name}
-            onChange={(e) => setusername(e.target.value)}
-            value={username}
+            type="file"
+            onChange={(e) => imageUpload(e.target.files[0], "files", setimage)}
           />
-          <button type="submit" className="button">
-            Submit
-          </button>
-        </form>
-      </>
-    );
-  } else {
-    navigate("/");
-  }
+          <Suspense>
+            <Avatar userImg={currentUser?.photoURL} />
+          </Suspense>
+        </div>
+        <input
+          type="name"
+          placeholder={name}
+          onChange={(e) => setusername(e.target.value)}
+          value={username}
+        />
+        <button type="submit" className="button">
+          Submit
+        </button>
+      </form>
+    </>
+  );
 };
 
 export default Profile;

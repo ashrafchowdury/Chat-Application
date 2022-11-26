@@ -1,7 +1,5 @@
 import React, { memo, lazy, Suspense } from "react";
-const Link = lazy(() =>
-  import("react-router-dom").then((module) => ({ default: module.Link }))
-);
+import { Link } from "react-router-dom";
 const Avatar = lazy(() => import("./Avatar"));
 
 const User = ({ data }) => {

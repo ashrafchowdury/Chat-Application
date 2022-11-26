@@ -1,37 +1,53 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import "./styles/globals.css";
 import { Route, Routes } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+// Alert Library
+const Toaster = lazy(() =>
+  import("react-hot-toast").then((module) => ({ default: module.Toaster }))
+);
+// Animation library
 import AOS from "aos";
 import "aos/dist/aos.css";
-//
+// Custom hooks
 import AuthContextProvider from "./utils/hooks/useAuth";
 import UserDataProvider from "./utils/hooks/useUsers";
-
-//
+// Pages
 import Home from "./pages/Home";
-import Users from "./pages/Users";
-import Chats from "./pages/Chats";
-import Profile from "./pages/Profile";
+const Users = lazy(() => import("./pages/Users"));
+const Chats = lazy(() => import("./pages/Chats"));
+const Profile = lazy(() => import("./pages/Profile"));
+const NotFound = lazy(() => import("./pages/404"));
+// Error Boundary Component
+import ErrorBoundary from "./utils/components/ErrorBoundary";
+import PrivateRoute from "./utils/components/PrivateRoute";
+
 function App() {
+  // animation duration
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
   return (
     <>
       <AuthContextProvider>
-        <Toaster position="top-center" reverseOrder={false} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
+        <ErrorBoundary>
+          <Suspense fallback={<i className="fa-solid fa-spinner"></i>}>
+            <Toaster position="top-center" reverseOrder={false} />
+            <UserDataProvider>
+              <Routes>
+                {/*** Privet Route ****/}
+                <Route element={<PrivateRoute />}>
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/users" element={<Users />} />
+                  <Route path="/users/chats" element={<Chats />} />
+                </Route>
 
-        <UserDataProvider>
-          <Routes>
-            <Route path="/users" element={<Users />} />
-            <Route path="/users/chats" element={<Chats />} />
-          </Routes>
-        </UserDataProvider>
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </UserDataProvider>
+          </Suspense>
+        </ErrorBoundary>
       </AuthContextProvider>
     </>
   );

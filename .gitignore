@@ -25,4 +25,4 @@ dist-ssr
 *.css.map
 
 # local env files
-.env
+.env*.local

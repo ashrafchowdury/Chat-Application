@@ -1,14 +1,15 @@
-import React, { useState, lazy } from "react";
+import React, { useState } from "react";
 import "../styles/pages/home/home.css";
 import { useAuth } from "../utils/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-const toast = lazy(() => import("react-hot-toast"));
+import { toast } from "react-hot-toast";
 
 const Home = () => {
   const [email, setemail] = useState("");
   const { currentUser, signin } = useAuth();
   const navigate = useNavigate();
 
+  // Submit User Email
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) {
@@ -18,7 +19,7 @@ const Home = () => {
         signin(email);
         setemail("");
       } catch (error) {
-        console.log(error);
+        toast.error("Something was wrong!");
       }
     }
   };

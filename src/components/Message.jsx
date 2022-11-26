@@ -3,26 +3,29 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { useAuth } from "../utils/hooks/useAuth";
 //
-const toast = lazy(() => import("react-hot-toast"));
+import { toast } from "react-hot-toast";
 
 const Message = ({ val, userId, myId }) => {
   const { currentUser } = useAuth();
+
+  //Delete Message function
   const handleMsgDelete = async (id) => {
     await deleteDoc(
       doc(db, "message", `${myId?.uid + userId?.uid}`, "data", id)
     );
     toast.success("Message Deleted");
   };
-
+  //Copy Message function
+  const handleCopyText = (text) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Message Copied");
+  };
+  //Download Image function function
   const handleDownload = (imageUrl) => {
     const a = document.createElement("a");
     a.href = imageUrl;
     a.target = "_blank";
     a.click();
-  };
-  const handleCopyText = (text) => {
-    navigator.clipboard.writeText(text);
-    toast.success("Message Copied");
   };
 
   return (

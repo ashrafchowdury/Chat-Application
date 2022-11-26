@@ -9,6 +9,7 @@ export const useUsers = () => useContext(UserContext);
 const UserDataProvider = ({ children }) => {
   const [user, setuser] = useState([]);
 
+  //get users data
   useEffect(() => {
     const q = query(collection(db, "userInfo"));
     const userData = onSnapshot(q, (snapshot) => {

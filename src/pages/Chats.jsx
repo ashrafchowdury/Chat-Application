@@ -10,14 +10,15 @@ import {
   serverTimestamp,
   addDoc,
 } from "firebase/firestore";
-
-const Message = lazy(() => import("../components/Message"));
-const Avatar = lazy(() => import("../components/Avatar"));
-const toast = lazy(() => import("react-hot-toast"));
-import { useAuth } from "../utils/hooks/useAuth";
-import { useUsers } from "../utils/hooks/useUsers";
 import { db } from "../firebase/firebase";
 import { imageUpload } from "../utils/functions/imageUpload";
+// lazy load components
+const Message = lazy(() => import("../components/Message"));
+const Avatar = lazy(() => import("../components/Avatar"));
+// Custom hooks
+import { useAuth } from "../utils/hooks/useAuth";
+import { useUsers } from "../utils/hooks/useUsers";
+import { toast } from "react-hot-toast";
 
 const Chats = () => {
   const [message, setmessage] = useState([]);

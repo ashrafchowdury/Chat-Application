@@ -1,18 +1,18 @@
 import React, { useState, Suspense, lazy, Fragment } from "react";
 import "../styles/pages/users/user.css";
-const Link = lazy(() =>
-  import("react-router-dom").then((module) => ({ default: module.Link }))
-);
+//lazy load component
 const Avatar = lazy(() => import("../components/Avatar"));
 //
+import User from "../components/User";
+import { Link } from "react-router-dom";
+//Custom hooks
 import { useAuth } from "../utils/hooks/useAuth";
 import { useUsers } from "../utils/hooks/useUsers";
-import User from "../components/User";
 
 const Users = () => {
   const { user } = useUsers();
-  const [search, setsearch] = useState("");
   const { currentUser, name } = useAuth();
+  const [search, setsearch] = useState("");
 
   return (
     <>
@@ -47,26 +47,6 @@ const Users = () => {
         {user
           ?.filter((value) => {
             return value?.id != currentUser?.email;
-          })
-          .filter((value) => {
-            return value?.token;
-          })
-          .filter((value) => {
-            return value?.name?.toLowerCase().includes(search.toLowerCase());
-          })
-          .map((val) => {
-            return (
-              <Fragment key={val?.id}>
-                <User data={val} />
-              </Fragment>
-            );
-          })}
-        {user
-          ?.filter((value) => {
-            return value?.id != currentUser?.email;
-          })
-          .filter((value) => {
-            return !value?.token;
           })
           .filter((value) => {
             return value?.name?.toLowerCase().includes(search.toLowerCase());
