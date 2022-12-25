@@ -1,0 +1,169 @@
+.user_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 1200px;
+  height: 100px;
+  margin: 10px auto 0;
+}
+.user_nav .user_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.user_nav .user_info h1 {
+  font-size: 32px;
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.search_section {
+  margin: 20px auto;
+  width: 1200px;
+}
+.search_section .input_div {
+  width: 100%;
+}
+
+.users_section {
+  width: 1200px;
+  margin: 50px auto;
+  cursor: pointer;
+  overflow-y: auto;
+}
+.users_section .user {
+  display: flex;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(227, 227, 227, 0.169);
+  transition-duration: 0.7s;
+}
+.users_section .user div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+}
+.users_section .user .active {
+  background-color: rgb(43, 246, 43);
+}
+.users_section .user .deactive {
+  background-color: tomato;
+}
+.users_section .user p {
+  margin-left: 10px;
+  width: 100%;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.users_section .user img {
+  width: 58px;
+  height: 56px;
+}
+
+@media screen and (max-width: 1250px) {
+  .user_nav {
+    width: 1050px;
+  }
+  .search_section {
+    margin: 20px auto;
+    width: 1050px;
+  }
+  .search_section .input_div {
+    width: 100%;
+  }
+  .active_user_section {
+    width: 1050px;
+  }
+  .users_section {
+    width: 1050px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .user_nav {
+    width: 750px;
+  }
+  .search_section {
+    margin: 20px auto;
+    width: 750px;
+  }
+  .search_section .input_div {
+    width: 100%;
+  }
+  .active_user_section {
+    width: 750px;
+  }
+  .users_section {
+    width: 750px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .user_nav {
+    width: 90%;
+    height: 80px;
+    margin: 10px auto 0;
+  }
+  .user_nav .user_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .user_nav .user_info h1 {
+    font-size: 20px;
+  }
+  .user_nav .user_info img {
+    width: 42px;
+    height: 40px;
+  }
+  .search_section {
+    margin: 20px auto;
+    width: 90%;
+  }
+  .search_section .input_div {
+    width: 100%;
+  }
+  .users_section {
+    width: 90%;
+    margin: 50px auto;
+  }
+  .users_section .user {
+    display: flex;
+    align-items: center;
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(183, 183, 183, 0.281);
+    transition-duration: 0.7s;
+  }
+  .users_section .user div {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+  }
+  .users_section .user p {
+    margin-left: 10px;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .users_section .user img {
+    width: 45px;
+    height: 43px;
+  }
+}/*# sourceMappingURL=user.css.map */

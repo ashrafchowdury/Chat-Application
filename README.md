@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+![Logo](https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/Groudfp%20188.png?alt=media&token=70ad9563-acfa-4cc9-b8be-3034416b6457)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Chat Application
 
-## Available Scripts
+In this Chat application we can chat with our friends family and colleagues. We can also send pictures videos and files to each other.
 
-In the project directory, you can run:
+For chatting with other users you need to create an account with the app. The account is simple to create and is completely free of charge. You can choose from a list of available usernames or register with your email address. Once you are logged in you can start chatting with other users immediately.
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 💻 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Live Text & Image Share
+- User Active Icon
+- Text & Image Delete
+- User Registration
+- Cross platform
+- Fully Responsive
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗 Built With
 
-### `npm run build`
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/JavaScript.svg" alt="javascript" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" alt="Reactjs" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sass.svg" alt="SCSS" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Firebase-Dark.svg" alt="Firebase" width="50px" />&nbsp;
+<img src="https://github.com/ashrafchowdury/readme-images/blob/main/icons/Cypress.svg" alt="Cypress" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Git.svg" alt="Git" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Github-Dark.svg" alt="Github" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/VSCode-Dark.svg" alt="VScode" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Figma-Dark.svg" alt="Figma" width="50px" />&nbsp;
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" alt="Vercel" width="50px" />&nbsp;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔋 Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**1. Clone the Repository**
 
-### `npm run eject`
+```
+  git clone https://github.com/ammaaraslam/tweetsnap.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**2. Move into the working directory**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+  cd chat-application
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**3. Install Dependencies**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+  npm install
+```
 
-## Learn More
+**4. Create a .env.local file and add your firebase API keys**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  APP_FIREBAS_API_KEY
+  APP_FIREBASE_AUTH_DOMAIN
+  APP_FIREBASE_PROJECT_ID
+  APP_FIREBASE_STORAGE_BUCKE
+  APP_FIREBASE_MSG_SENDER_ID
+  APP_FIREBASE_APP_ID
+  APP_FIREBASE_MEASUREMENT_ID
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**5. Run the App**
 
-### Code Splitting
+```
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br />
 
-### Analyzing the Bundle Size
+## 🚀 About Me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I’m Ashraf Chowdury. I've been coding for nearly 2.5 years. I'm a developer who loves building full-stack applications & learning new technologies. I've also helped people develop their web apps. I've been working with React.js for over a year now. My goal is to be able to build applications that are fast responsive and fun to use.
 
-### Making a Progressive Web App
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 Social Media
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a  href="https://www.linkedin.com/in/ashraf-chowdury-297301206/" target="_blank">
+  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Twitter.svg" alt="Twitter" width="50px" />
+</a>&nbsp;
+<a href="https://twitter.com/Ashraf_365" target="_blank">
+  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/LinkedIn.svg" alt="In" width="50px" />
+</a>&nbsp;
