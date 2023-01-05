@@ -1,4 +1,4 @@
-![Logo](https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/Groudfp%20188.png?alt=media&token=70ad9563-acfa-4cc9-b8be-3034416b6457)
+![Logo](https://firebasestorage.googleapis.com/v0/b/store-images-ad405.appspot.com/o/b094a0cd-b7f7-498c-9962-bd6f364f124b.png?alt=media&token=838b92bf-473b-479f-ba32-5e9758a8e3c3)
 
 # Chat Application
 
