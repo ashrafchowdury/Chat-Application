@@ -9,28 +9,28 @@ body {
 }
 .chat_nav {
   width: 1100px;
-  height: 80px;
+  height: 70px;
   @include flex($content: flex-start);
-  border-bottom: 1px solid rgba(54, 54, 54, 0.209);
+  border-bottom: 1px solid rgb(223, 223, 223);
   position: fixed;
   z-index: 2;
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: $body;
+
   i {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     margin-right: 45px;
     cursor: pointer;
   }
   .user {
     @include flex($content: flex-start);
     img {
-      width: 45px;
-      height: 45px;
+      width: 38px;
+      height: 38px;
     }
     h1 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       margin-left: 10px;
     }
@@ -113,7 +113,6 @@ body {
 
 .messsage_div {
   width: 1100px;
-  background-color: $body;
   margin: 0px auto;
   @include flex($content: space-between);
   position: fixed;
@@ -128,14 +127,14 @@ body {
 
     .input_file {
       position: absolute;
-      top: 16px;
-      right: 28px;
-      width: 34px;
-      height: 32px;
+      top: 20px;
+      right: 16px;
+      width: 32px;
+      height: 26px;
       overflow: hidden;
       // border: 2px solid red;
       i {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: $blue;
       }
       input {
@@ -179,28 +178,27 @@ body {
 @media screen and (max-width: 1150px) {
   .chat_nav {
     width: 750px;
-    height: 80px;
+    height: 70px;
     @include flex($content: flex-start);
-    border-bottom: 1px solid rgba(54, 54, 54, 0.209);
     position: fixed;
     z-index: 2;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+
     i {
-      font-size: 2rem;
+      font-size: 1.4rem;
       margin-right: 45px;
       cursor: pointer;
     }
     .user {
       @include flex($content: flex-start);
       img {
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
       }
       h1 {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 600;
         margin-left: 10px;
       }
@@ -281,7 +279,7 @@ body {
   }
   .messsage_div {
     width: 750px;
-    background-color: $body;
+
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -296,14 +294,14 @@ body {
 
       .input_file {
         position: absolute;
-        top: 16px;
-        right: 28px;
-        width: 34px;
-        height: 32px;
+        top: 19px;
+        right: 18px;
+        width: 32px;
+        height: 28px;
         overflow: hidden;
         // border: 2px solid red;
         i {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           color: $blue;
         }
         input {
@@ -329,17 +327,16 @@ body {
 @media screen and (max-width: 750px) {
   .chat_nav {
     width: 550px;
-    height: 80px;
+    height: 70px;
     @include flex($content: flex-start);
-    border-bottom: 1px solid rgba(54, 54, 54, 0.209);
     position: fixed;
     z-index: 2;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+
     i {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
 
       margin-right: 25px;
       cursor: pointer;
@@ -347,11 +344,11 @@ body {
     .user {
       @include flex($content: flex-start);
       img {
-        width: 42px;
-        height: 42px;
+        width: 35px;
+        height: 35px;
       }
       h1 {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 600;
         margin-left: 10px;
       }
@@ -432,7 +429,7 @@ body {
   }
   .messsage_div {
     width: 550px;
-    background-color: $body;
+
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -448,13 +445,13 @@ body {
       .input_file {
         position: absolute;
         top: 16px;
-        right: 28px;
-        width: 34px;
-        height: 32px;
+        right: 16px;
+        width: 28px;
+        height: 25px;
         overflow: hidden;
         // border: 2px solid red;
         i {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
           color: $blue;
         }
         input {
@@ -481,15 +478,14 @@ body {
     width: 98%;
     height: 60px;
     @include flex($content: flex-start);
-    border-bottom: 1px solid rgba(54, 54, 54, 0.209);
     position: fixed;
     z-index: 2;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    background-color: $body;
+
     i {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
 
       margin-right: 25px;
       cursor: pointer;
@@ -497,11 +493,11 @@ body {
     .user {
       @include flex($content: flex-start);
       img {
-        width: 38px;
-        height: 38px;
+        width: 32px;
+        height: 32px;
       }
       h1 {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 600;
         margin-left: 10px;
       }
@@ -582,7 +578,7 @@ body {
   }
   .messsage_div {
     width: 100%;
-    background-color: $body;
+
     margin: 0px auto;
     @include flex($content: space-between);
     position: fixed;
@@ -622,6 +618,9 @@ body {
       font-size: 1.5rem;
       margin-left: 14px;
       cursor: pointer;
+    }
+    .submit i{
+      font-size: 22px;
     }
   }
 }

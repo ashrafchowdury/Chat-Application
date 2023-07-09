@@ -6,12 +6,13 @@
 nav {
   @include flex($content: center);
   height: 110px;
+  margin-bottom: 40px;
   .logo {
     display: flex;
     align-items: center;
     img {
       margin-right: 15px;
-      width: 38px;
+      width: 32px;
     }
     h1 {
       font-size: 38px;
@@ -25,22 +26,15 @@ header {
   @include flex($content: center, $items: center, $direc: column);
   text-align: center;
   h1 {
-    font-size: 88px;
+    font-size: 78px;
     font-weight: bold;
-    line-height: 110px;
-    span {
-      background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
+    line-height: 100px;
   }
   p {
     margin: 15px 0 50px;
     font-size: 18px;
     line-height: 32px;
-    width: 800px;
+    width: 750px;
   }
   .input_div {
     width: 750px;
@@ -72,16 +66,10 @@ footer {
     text-align: center;
     // border: 2px solid red;
     h1 {
-      font-size: 78px;
+      font-size: 68px;
       font-weight: bold;
-      line-height: 100px;
-      span {
-        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-      }
+      line-height: 90px;
+
     }
     p {
       margin: 15px 0 50px;
@@ -102,16 +90,10 @@ footer {
     text-align: center;
     // border: 2px solid red;
     h1 {
-      font-size: 68px;
+      font-size: 58px;
       font-weight: bold;
-      line-height: 80px;
-      span {
-        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-      }
+      line-height: 70px;
+    
     }
     p {
       margin: 15px 0 50px;
@@ -128,16 +110,16 @@ footer {
 @media screen and (max-width: 550px) {
   nav {
     @include flex($content: center);
-    height: 100px;
+    height: 90px;
     .logo {
       display: flex;
       align-items: center;
       img {
-        margin-right: 15px;
-        width: 32px;
+        margin-right: 10px;
+        width: 25px;
       }
       h1 {
-        font-size: 32px;
+        font-size: 24px;
         margin-bottom: 5px;
         font-family: "Righteous", cursive;
       }
@@ -145,27 +127,20 @@ footer {
   }
   header {
     width: 95%;
-    height: 95vh;
+    height: 75vh;
     @include flex($content: center, $items: center, $direc: column);
     text-align: center;
     margin: 0 auto;
     // border: 2px solid red;
     h1 {
-      font-size: 42px;
+      font-size: 28px;
       font-weight: bold;
-      line-height: 55px;
-      span {
-        background: linear-gradient(266.78deg, $purple 8.99%, $blue 59.83%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-      }
+      line-height: 42px;
     }
     p {
       margin: 15px 0 50px;
-      font-size: 14px;
-      line-height: 30px;
+      font-size: 12px;
+      line-height: 24px;
       width: 95%;
     }
     .input_div {

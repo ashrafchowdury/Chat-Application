@@ -5,12 +5,14 @@
   font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
-  color: rgb(238, 238, 238);
+  color: black;
 }
 
 body {
   overflow-x: hidden;
-  background-color: rgb(22, 22, 36);
+  background: radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 0% 0%/20px 20px, radial-gradient(circle, transparent 20%, #ffffff 20%, #ffffff 80%, transparent 80%, transparent) 10px 10px/20px 20px, linear-gradient(#ececec 2px, transparent 2px) 0px -1px/10px 10px, linear-gradient(90deg, #ececec 2px, #ffffff 2px) -1px 0px/10px 10px #ffffff;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+  background-color: #ffffff;
   transition-duration: 0.5s;
 }
 
@@ -29,12 +31,12 @@ h1 {
 
 /************** Button *******************/
 .button {
-  padding: 12px 40px;
+  padding: 10px 35px;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 50px;
-  background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
+  background: linear-gradient(270deg, #171717 0%, #313131 100%);
   color: white;
   cursor: pointer;
   letter-spacing: 1px;
@@ -42,8 +44,7 @@ h1 {
   transition-duration: 0.5s;
 }
 .button:hover {
-  box-shadow: -1px 2px 125px -12px rgba(89, 89, 89, 0.9);
-  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /************** Input filed *******************/
@@ -52,7 +53,7 @@ h1 {
   position: relative;
 }
 .input_div span {
-  background-color: #5344df;
+  background-color: #171717;
   padding: 10px 15px;
   border-radius: 50px;
   color: white;
@@ -69,28 +70,18 @@ h1 {
   padding: 13px 60px;
   border-radius: 50px;
   width: 100%;
-  border: 3px solid #5344df;
+  border: 3px solid #171717;
   background-color: transparent;
 }
 
 /************** Loader *******************/
 .fa-spinner {
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
   font-size: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-@-webkit-keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spin {
@@ -143,7 +134,7 @@ h1 {
 
 @media screen and (max-width: 1050px) {
   p,
-button {
+  button {
     font-size: 14px;
   }
   h1 {
@@ -154,7 +145,7 @@ button {
     position: relative;
   }
   .input_div span {
-    background-color: #5344df;
+    background-color: #171717;
     padding: 8px 13px;
     border-radius: 50px;
     color: white;
@@ -170,7 +161,7 @@ button {
     padding: 11px 54px;
     border-radius: 50px;
     width: 100%;
-    border: 3px solid #5344df;
+    border: 3px solid #171717;
     background-color: transparent;
   }
 }
@@ -179,12 +170,12 @@ button {
     font-size: 32px;
   }
   .button {
-    padding: 11px 35px;
+    padding: 8px 30px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
+    background: linear-gradient(270deg, #171717 0%, #313131 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
@@ -193,19 +184,19 @@ button {
 }
 @media screen and (max-width: 550px) {
   p,
-button {
+  button {
     font-size: 12px;
   }
   h1 {
     font-size: 28px;
   }
   .button {
-    padding: 11px 30px;
+    padding: 7px 25px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     border-radius: 50px;
-    background: linear-gradient(270deg, #5344df 0%, #4e86fe 100%);
+    background: linear-gradient(270deg, #171717 0%, #313131 100%);
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
@@ -216,7 +207,7 @@ button {
     position: relative;
   }
   .input_div span {
-    background-color: #5344df;
+    background-color: #171717;
     padding: 5px 10px;
     border-radius: 50px;
     color: white;
@@ -232,7 +223,34 @@ button {
     padding: 10px 46px;
     border-radius: 50px;
     width: 100%;
-    border: 2px solid #5344df;
+    border: 2px solid #171717;
     background-color: transparent;
+  }
+}
+.heading {
+  --bg-size: 200%;
+  --color-one: #151515;
+  --color-two: #e8e8e8;
+  --color-three: #222222;
+  background: linear-gradient(60deg, var(--color-one), var(--color-two), var(--color-three), var(--color-three), var(--color-one), var(--color-one)) 0 0/var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 12s infinite linear;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boujee-text {
+    animation: move-bg 12s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
   }
 }/*# sourceMappingURL=globals.css.map */

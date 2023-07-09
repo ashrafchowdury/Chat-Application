@@ -6,11 +6,32 @@
   font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
-  color: rgb(238, 238, 238);
+  color: black;
 }
 body {
   overflow-x: hidden;
-  background-color: rgb(22, 22, 36);
+  background: radial-gradient(
+        circle,
+        transparent 20%,
+        #ffffff 20%,
+        #ffffff 80%,
+        transparent 80%,
+        transparent
+      )
+      0% 0% / 20px 20px,
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #ffffff 20%,
+        #ffffff 80%,
+        transparent 80%,
+        transparent
+      )
+      10px 10px / 20px 20px,
+    linear-gradient(#ececec 2px, transparent 2px) 0px -1px / 10px 10px,
+    linear-gradient(90deg, #ececec 2px, #ffffff 2px) -1px 0px / 10px 10px #ffffff;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+  background-color: #ffffff;
   transition-duration: 0.5s;
 }
 a {
@@ -26,9 +47,9 @@ h1 {
 
 /************** Button *******************/
 .button {
-  padding: 12px 40px;
+  padding: 10px 35px;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 50px;
   background: linear-gradient(270deg, $purple 0%, $blue 100%);
@@ -38,8 +59,7 @@ h1 {
   margin-left: 10px;
   transition-duration: 0.5s;
   &:hover {
-    box-shadow: -1px 2px 125px -12px rgba(89, 89, 89, 0.9);
-    transform: scale(1.05);
+    opacity: 0.9;
   }
 }
 /************** Input filed *******************/
@@ -96,7 +116,6 @@ h1 {
   text-align: center;
   text-transform: capitalize;
 }
-
 
 /************** Custom scrollbar *******************/
 ::-webkit-scrollbar {
@@ -162,9 +181,9 @@ h1 {
     font-size: 32px;
   }
   .button {
-    padding: 11px 35px;
+    padding: 8px 30px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 50px;
     background: linear-gradient(270deg, $purple 0%, $blue 100%);
@@ -184,9 +203,9 @@ h1 {
     font-size: 28px;
   }
   .button {
-    padding: 11px 30px;
+    padding: 7px 25px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     border-radius: 50px;
     background: linear-gradient(270deg, $purple 0%, $blue 100%);
@@ -217,6 +236,43 @@ h1 {
       width: 100%;
       border: 2px solid $purple;
       background-color: transparent;
+    }
+  }
+}
+
+.heading {
+  --bg-size: 200%;
+  --color-one: #151515;
+  --color-two: #e8e8e8;
+  --color-three: #222222;
+
+  background: linear-gradient(
+      60deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-three),
+      var(--color-three),
+      var(--color-one),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 12s infinite linear;
+}
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boujee-text {
+    animation: move-bg 12s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
     }
   }
 }

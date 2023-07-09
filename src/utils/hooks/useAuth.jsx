@@ -58,6 +58,7 @@ const AuthContextProvider = ({ children }) => {
           });
         } else {
           toast.error("Something was wrong!");
+          console.log(error);
         }
       });
   };

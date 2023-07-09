@@ -158,7 +158,7 @@ const Chats = () => {
           </div>
         </div>
 
-        <button type="submit">
+        <button type="submit" className="submit">
           <i className="fa-solid fa-paper-plane"></i>
         </button>
       </form>

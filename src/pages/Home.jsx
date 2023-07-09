@@ -32,18 +32,19 @@ const Home = () => {
         <nav>
           <a href="/" className="logo">
             <img src="./logo.svg" alt="logo" title="logo" />
-            <h1>Chat APP</h1>
+            <h1>Chaty</h1>
           </a>
         </nav>
 
         <header>
           <h1>
-            <span>Securely Communicate</span> <br /> With Others
+            <span className="heading"> Instant Chats, </span> <br />
+            Endless Connections
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur amet, adipisicing elit. Quis,
-            cupiditate dolor. Provident, sit! Sequi in recusandae, inventore
-            molestias, voluptates saepe praesentium natus facere corporis ex non
+            Elevate your messaging experience with our feature-rich chat
+            application, enabling real-time communication, multimedia sharing,
+            and effortless collaboration in a user-friendly interface
           </p>
           <form onSubmit={handleSubmit} className="input_div">
             <span>
@@ -56,7 +57,7 @@ const Home = () => {
               onChange={(e) => setemail(e.target.value)}
               value={email}
             />
-            <button className="button">Submit</button>
+            <button className="button">LogIn</button>
           </form>
         </header>
 

@@ -16,18 +16,21 @@
   flex-direction: row;
 }
 .user_nav .user_info h1 {
-  font-size: 32px;
-  margin-left: 10px;
+  font-size: 24px;
+  margin-left: 5px;
   text-transform: capitalize;
   font-weight: bold;
 }
 
 .search_section {
-  margin: 20px auto;
+  margin: 5px auto;
   width: 1200px;
 }
 .search_section .input_div {
   width: 100%;
+}
+.search_section .input_div i {
+  font-size: 16px;
 }
 
 .users_section {
@@ -40,8 +43,8 @@
   display: flex;
   align-items: center;
   padding-bottom: 14px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid rgba(227, 227, 227, 0.169);
+  margin-bottom: 35px;
+  border-bottom: 1px solid rgb(222, 222, 222);
   transition-duration: 0.7s;
 }
 .users_section .user div {
@@ -56,19 +59,18 @@
   background-color: tomato;
 }
 .users_section .user p {
-  margin-left: 10px;
+  margin-left: 15px;
   width: 100%;
   text-transform: capitalize;
   font-size: 20px;
-  color: white;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .users_section .user img {
-  width: 58px;
-  height: 56px;
+  width: 42px;
+  height: 42px;
 }
 
 @media screen and (max-width: 1250px) {
@@ -94,7 +96,7 @@
     width: 750px;
   }
   .search_section {
-    margin: 20px auto;
+    margin: 0px auto;
     width: 750px;
   }
   .search_section .input_div {
@@ -121,14 +123,14 @@
     flex-direction: row;
   }
   .user_nav .user_info h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .user_nav .user_info img {
-    width: 42px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
   .search_section {
-    margin: 20px auto;
+    margin: 0px auto;
     width: 90%;
   }
   .search_section .input_div {
@@ -142,8 +144,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 8px;
-    margin-bottom: 22px;
-    border-bottom: 1px solid rgba(183, 183, 183, 0.281);
+    margin-bottom: 25px;
     transition-duration: 0.7s;
   }
   .users_section .user div {
@@ -152,18 +153,17 @@
     border-radius: 50px;
   }
   .users_section .user p {
-    margin-left: 10px;
+    margin-left: 12px;
     width: 100%;
     text-transform: capitalize;
-    font-size: 16px;
-    color: white;
+    font-size: 14px;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .users_section .user img {
-    width: 45px;
-    height: 43px;
+    width: 35px;
+    height: 35px;
   }
 }/*# sourceMappingURL=user.css.map */
