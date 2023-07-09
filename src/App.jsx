@@ -5,9 +5,6 @@ import { Route, Routes } from "react-router-dom";
 const Toaster = lazy(() =>
   import("react-hot-toast").then((module) => ({ default: module.Toaster }))
 );
-// Animation library
-import AOS from "aos";
-import "aos/dist/aos.css";
 // Custom hooks
 import AuthContextProvider from "./utils/hooks/useAuth";
 import UserDataProvider from "./utils/hooks/useUsers";
@@ -22,10 +19,8 @@ import ErrorBoundary from "./utils/components/ErrorBoundary";
 import PrivateRoute from "./utils/components/PrivateRoute";
 
 function App() {
-  // animation duration
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+
+
 
   return (
     <>

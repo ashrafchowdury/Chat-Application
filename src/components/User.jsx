@@ -6,7 +6,7 @@ const User = ({ data }) => {
   return (
     <>
       <Link to={`/users/chats?${data?.uid}`}>
-        <div className="user" data-aos="fade-up">
+        <div className="user">
           <Suspense>
             <Avatar userImg={data?.photo} />
           </Suspense>

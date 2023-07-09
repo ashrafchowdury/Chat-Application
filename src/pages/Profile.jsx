@@ -61,7 +61,7 @@ const Profile = () => {
 
   return (
     <>
-      <nav className="profile_nav" data-aos="fade-down">
+      <nav className="profile_nav">
         <span>
           <i
             className="fa-solid fa-arrow-left"
@@ -76,7 +76,6 @@ const Profile = () => {
       <form
         className="profile_update"
         onSubmit={updateUserProfile}
-        data-aos="zoom-in"
       >
         <div>
           <input

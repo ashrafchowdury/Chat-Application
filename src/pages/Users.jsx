@@ -16,7 +16,7 @@ const Users = () => {
 
   return (
     <>
-      <nav className="user_nav" data-aos="fade-down">
+      <nav className="user_nav">
         <div className="user_info">
           <Suspense>
             <Avatar userImg={currentUser?.photoURL} />
@@ -29,7 +29,7 @@ const Users = () => {
         </Link>
       </nav>
 
-      <section className="search_section" data-aos="fade-right">
+      <section className="search_section">
         <div className="input_div">
           <span>
             <i className="fa-solid fa-magnifying-glass"></i>

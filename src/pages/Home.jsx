@@ -29,14 +29,14 @@ const Home = () => {
   } else {
     return (
       <>
-        <nav data-aos="fade-down">
+        <nav>
           <a href="/" className="logo">
             <img src="./logo.svg" alt="logo" title="logo" />
             <h1>Chat APP</h1>
           </a>
         </nav>
 
-        <header data-aos="zoom-in">
+        <header>
           <h1>
             <span>Securely Communicate</span> <br /> With Others
           </h1>

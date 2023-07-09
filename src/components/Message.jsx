@@ -32,7 +32,6 @@ const Message = ({ val, userId, myId }) => {
     <>
       <div
         className={val?.uid == currentUser?.uid ? "right_user" : "left_user"}
-        data-aos={val?.uid == currentUser?.uid ? "fade-left" : "fade-right"}
       >
         {val.img ? (
           <>
